@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace c__project_proposal
 {
     public partial class frmLogin : Form
     {
+        
+
         private UserAccount account = new AdminAccount("admin", "admin");
         public frmLogin()
         {
@@ -37,6 +40,7 @@ namespace c__project_proposal
 
                 frmDashboard show = new frmDashboard();
                 show.Show();
+                this.Close();
             }
             else
             {

@@ -13,14 +13,26 @@ namespace c__project_proposal
 {
     public partial class frmCreateSched : Form
     {
+        string name;
+        string contactNumber;
         string schedDate;
         string schedTime;
         string appointmentType;
+        
         public frmCreateSched()
         {
             InitializeComponent();
         }
+        public class NumberFormatException : Exception
+        {
+            public NumberFormatException(string message) : base(message) { }
+        }
 
+        public class StringFormatException : Exception
+        {
+            public StringFormatException(string message) : base(message) { }
+
+        }
         private void frmCreateSched_Load(object sender, EventArgs e)
         {
 
@@ -66,11 +78,52 @@ namespace c__project_proposal
         }
         private void buttonSetSchedule_Click(object sender, EventArgs e)
         {
-            schedDate = dateTimePickerDate.Value.ToString("yyyy-MM-dd");
-            schedTime = $" {comboBoxHour.Text} : {comboBoxMinute.Text}  {comboBoxTimeOfDay.Text} ";
-            appointmentType = comboBoxAppointment.SelectedItem.ToString();
+            try
+            {
+                name = textBoxName.Text;
+                contactNumber = textBoxNumber.Text;
+                schedDate = dateTimePickerDate.Value.ToString("yyyy-MM-dd");
+                schedTime = $"{comboBoxHour.Text}:{comboBoxMinute.Text}  {comboBoxTimeOfDay.Text} ";
+                appointmentType = comboBoxAppointment.SelectedItem.ToString();
 
-            MessageBox.Show("Appointment" + "\n" + "Type of Appointment:  " + appointmentType + "\n" + "Date:  " + schedDate + schedTime);
+
+                DialogResult result = MessageBox.Show(
+                $"Name: {name}\n" +
+                $"Contact Number: {contactNumber}\n" +
+                "Appointment\n" +
+                "Type of Appointment: " + appointmentType + "\n" +
+                "Date: " + schedDate + " " + schedTime + "\n\n" +
+                "Do you want to confirm this appointment?",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    frmDashboard show = new frmDashboard(name, contactNumber, schedDate, schedTime, appointmentType);
+                    show.Show();
+                    this.Close();
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Code to execute if the user clicks "No" (e.g., cancel the operation)
+                }
+            }
+            catch (StringFormatException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "String format error");
+                Console.WriteLine(ex.Message);
+            }
+            catch (NumberFormatException ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Number format error");
+                Console.WriteLine(ex.Message);
+            }
+            
+
+
+
+
         }
     }
 }

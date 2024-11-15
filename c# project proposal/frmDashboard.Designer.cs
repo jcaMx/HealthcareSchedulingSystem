@@ -47,11 +47,17 @@
             this.settingsclick = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.locationview1 = new System.Windows.Forms.ListView();
-            this.locationview2 = new System.Windows.Forms.ListView();
-            this.locationview3 = new System.Windows.Forms.ListView();
             this.userName = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.labelSched1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.profilepicture)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // listviewcalendar
@@ -70,7 +76,7 @@
             this.listviewcalendar.HideSelection = false;
             this.listviewcalendar.Location = new System.Drawing.Point(274, 143);
             this.listviewcalendar.Name = "listviewcalendar";
-            this.listviewcalendar.Size = new System.Drawing.Size(442, 343);
+            this.listviewcalendar.Size = new System.Drawing.Size(442, 359);
             this.listviewcalendar.TabIndex = 0;
             this.listviewcalendar.UseCompatibleStateImageBehavior = false;
             this.listviewcalendar.View = System.Windows.Forms.View.Details;
@@ -210,33 +216,6 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "MONTH / WEEK / DAY";
             // 
-            // locationview1
-            // 
-            this.locationview1.HideSelection = false;
-            this.locationview1.Location = new System.Drawing.Point(748, 177);
-            this.locationview1.Name = "locationview1";
-            this.locationview1.Size = new System.Drawing.Size(156, 95);
-            this.locationview1.TabIndex = 14;
-            this.locationview1.UseCompatibleStateImageBehavior = false;
-            // 
-            // locationview2
-            // 
-            this.locationview2.HideSelection = false;
-            this.locationview2.Location = new System.Drawing.Point(748, 278);
-            this.locationview2.Name = "locationview2";
-            this.locationview2.Size = new System.Drawing.Size(156, 99);
-            this.locationview2.TabIndex = 15;
-            this.locationview2.UseCompatibleStateImageBehavior = false;
-            // 
-            // locationview3
-            // 
-            this.locationview3.HideSelection = false;
-            this.locationview3.Location = new System.Drawing.Point(748, 383);
-            this.locationview3.Name = "locationview3";
-            this.locationview3.Size = new System.Drawing.Size(156, 99);
-            this.locationview3.TabIndex = 16;
-            this.locationview3.UseCompatibleStateImageBehavior = false;
-            // 
             // userName
             // 
             this.userName.AutoSize = true;
@@ -246,14 +225,71 @@
             this.userName.TabIndex = 10;
             this.userName.Text = "Healthcare Administrator";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Controls.Add(this.labelSched1);
+            this.panel1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel1.Location = new System.Drawing.Point(737, 181);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel2.Location = new System.Drawing.Point(737, 296);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel3.Location = new System.Drawing.Point(737, 402);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 15;
+            // 
+            // labelSched1
+            // 
+            this.labelSched1.AutoSize = true;
+            this.labelSched1.Location = new System.Drawing.Point(8, 13);
+            this.labelSched1.Name = "labelSched1";
+            this.labelSched1.Size = new System.Drawing.Size(35, 13);
+            this.labelSched1.TabIndex = 0;
+            this.labelSched1.Text = "label1";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "label5";
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(949, 526);
-            this.Controls.Add(this.locationview3);
-            this.Controls.Add(this.locationview2);
-            this.Controls.Add(this.locationview1);
+            this.ClientSize = new System.Drawing.Size(965, 526);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.userName);
@@ -269,7 +305,14 @@
             this.Controls.Add(this.listviewcalendar);
             this.Name = "frmDashboard";
             this.Text = "frmDashboard";
+            this.Load += new System.EventHandler(this.frmDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profilepicture)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,10 +339,13 @@
         private System.Windows.Forms.Button settingsclick;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView locationview1;
-        private System.Windows.Forms.ListView locationview2;
-        private System.Windows.Forms.ListView locationview3;
         private System.Windows.Forms.Label userName;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelSched1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label5;
     }
 }
 
