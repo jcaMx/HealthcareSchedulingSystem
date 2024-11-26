@@ -17,7 +17,7 @@ namespace c__project_proposal
         private string schedDate;
         private string schedTime;
         private string appointmentType;
-        public frmDashboard(string name, string contactNumber, string schedDate, string schedTime, string appointmentType)
+        public frmDashboard(string name = "", string contactNumber = "", string schedDate = "", string schedTime = "", string appointmentType = "")
         {
             InitializeComponent();
             this.name = name;
@@ -25,6 +25,7 @@ namespace c__project_proposal
             this.schedDate = schedDate;
             this.schedTime = schedTime;
             this.appointmentType = appointmentType;
+            labelSched1.Text = $"Name: {name}\nContact Number: {contactNumber}\nType of Appointment: {appointmentType}\nDate: {schedDate}\nTime: {schedTime}";
         }
 
         private void buttonCreateSched_Click(object sender, EventArgs e)
@@ -42,5 +43,5 @@ namespace c__project_proposal
                            $"Time: {schedTime}";
         }
     }
-    }
+    
 }

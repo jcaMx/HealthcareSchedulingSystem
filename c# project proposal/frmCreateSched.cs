@@ -80,33 +80,28 @@ namespace c__project_proposal
         {
             try
             {
-                name = textBoxName.Text;
-                contactNumber = textBoxNumber.Text;
-                schedDate = dateTimePickerDate.Value.ToString("yyyy-MM-dd");
-                schedTime = $"{comboBoxHour.Text}:{comboBoxMinute.Text}  {comboBoxTimeOfDay.Text} ";
-                appointmentType = comboBoxAppointment.SelectedItem.ToString();
-
+                string name = textBoxName.Text;
+                string contactNumber = textBoxNumber.Text;
+                string schedDate = dateTimePickerDate.Value.ToString("yyyy-MM-dd");
+                string schedTime = $"{comboBoxHour.Text}:{comboBoxMinute.Text} {comboBoxTimeOfDay.Text}";
+                string appointmentType = comboBoxAppointment.SelectedItem.ToString();
 
                 DialogResult result = MessageBox.Show(
-                $"Name: {name}\n" +
-                $"Contact Number: {contactNumber}\n" +
-                "Appointment\n" +
-                "Type of Appointment: " + appointmentType + "\n" +
-                "Date: " + schedDate + " " + schedTime + "\n\n" +
-                "Do you want to confirm this appointment?",
-                "Confirmation",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
+                    $"Name: {name}\n" +
+                    $"Contact Number: {contactNumber}\n" +
+                    "Appointment\n" +
+                    $"Type of Appointment: {appointmentType}\n" +
+                    $"Date: {schedDate}\nTime: {schedTime}\n\n" +
+                    "Do you want to confirm this appointment?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    frmDashboard show = new frmDashboard(name, contactNumber, schedDate, schedTime, appointmentType);
-                    show.Show();
+                    DatabaseHelper.AddAppointment(name, contactNumber, schedDate, schedTime, appointmentType);
+                    MessageBox.Show("Appointment successfully added to the database.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
-                }
-                else if (result == DialogResult.No)
-                {
-                    // Code to execute if the user clicks "No" (e.g., cancel the operation)
                 }
             }
             catch (StringFormatException ex)

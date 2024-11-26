@@ -35,7 +35,7 @@ namespace c__project_proposal
 
             if (account.ValidateCredentials(inputUsername, inputPassword))
             {
-                MessageBox.Show($"Welcome User");
+                MessageBox.Show($"Welcome");
                 this.Hide();
 
                 frmDashboard show = new frmDashboard();
@@ -49,6 +49,11 @@ namespace c__project_proposal
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }
